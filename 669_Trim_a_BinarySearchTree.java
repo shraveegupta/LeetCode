@@ -15,6 +15,20 @@
  */
 class Solution {
     public TreeNode trimBST(TreeNode root, int low, int high) {
-        
+        //base condition
+        if(root == null){
+            return null;
+        }
+        if(root.val >= low && root.val <= high){
+            root.left = trimBST(root.left,low,high); //update the left node val
+            root.right = trimBST(root.right,low,high); //update the right node val
+        }
+        else if(root.val < low){
+            return trimBST(root.right,low,high); // make recursive call over right nodes
+        }
+        else if(root.val > high){
+            return trimBST(root.left,low,high); //make recursive calls over left node
+        }
+        return root;
     }
 }
