@@ -14,6 +14,8 @@
  *     }
  * }
  */
+
+
 class Solution {
     ArrayList<TreeNode> list = new ArrayList<>();
     public TreeNode increasingBST(TreeNode root) {
@@ -40,3 +42,4 @@ class Solution {
     inorder(node.right);
     }
 }
+
